@@ -4,10 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe page assignment html</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body{
+            margin: 0;
+            font-family: 'Segeo UI',Tahoma, sans-serif;
+            background: linear-gradient(135deg,#f6f9fc, #e9eff5);
+        }
+        /* ID selector */
+        #top{
+            text-align: center;
+            padding: 25px;
+            letter-spacing: 2px;
+        }
+        h2,h3 {
+            font-family: Georgia,serif;
+        }
+        <!-- .recipes-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+            gap: 25px;
+            padding: 20px;
+        } -->
+        .recipes-container {
+                display: grid;
+                grid-template-columns: repeat(3,1fr);
+                gap: 25px;
+                padding: 20px;
+            }
+
+            /* Tablet */
+        @media (max-width: 900px) {
+                .recipes-container {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            /* Mobile */
+        @media (max-width: 600px) {
+                .recipes-container {
+                    grid-template-columns: 1fr;
+                }
+            }
+        .recipe-card:hover{
+            transform: translate(-6px);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.15) ;
+        }
+        .recipe-card:hover{
+            transform: translate(-6px);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+        }
+        /* Descendant selector */
+        .recipe-card p {
+            color: #555;
+            line-height: 1.6;
+        }
+        .recipe-card img{
+            width: 100%;
+            max-width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+    </style>
 </head>
 <body>
-    <h1 id="top">My Recipe Book</h1>
-    <h2>Recipe Index</h2>
+    <h1 id="top" style="color: #b30000;">My Recipe Book</h1>
+    <nav>
+        <h2>Recipe Index</h2>
     <ol>
         <li><a href="#paratha">Indian paratha</a></li>
         <li><a href="#sushi">Japanese sushi</a></li>
@@ -16,55 +80,65 @@
         <li><a href="#sandwich">American sandwich</a></li>
         <li><a href="#salad">Healthy salad</a></li>
     </ol>
-<hr>
-<section>
-<h2 id="paratha">Indian paratha</h2>
-<p>
-    <a href="#paratha-ingredients">Ingredients</a> |
-    <a href="#paratha-steps">Steps</a>
-</p>
-<img src="paratha.png" alt="Indian paratha" width="300">
-<table border="1">
-<tr><th>Prep Time</th><td>15 mins</td></tr>
-<tr><th>Cook Time</th><td>10 mins</td></tr>
-<tr><th>Servings</th><td>2</td></tr>
-<tr><th>Difficulty</th><td>Easy</td></tr>
-</table>
-<p>
-    <h3 id="paratha-ingredients">Ingredients</h3>
-    <ul>
-        <li><i>Whole wheat flour</i></li>
-        <li><i>Water</i></li>
-        <li><i>Salt</i></li>
-        <li><i>Ghee or oil</i></li>
-        <li><i>Stuffing (optional)</i></li>
-    </ul>
-    <h3 id="paratha-steps">Steps</h3>
-    <ol>
-        <li>Mix whole wheat flour, water, and salt to form a dough. Knead until smooth.</li>
-        <li>Divide the dough into small balls and roll them out into circles.</li>
-        <li>If using stuffing, place it in the center of the circle and fold the edges to seal it.</li>
-        <li>Cook the paratha on a hot griddle, applying ghee or oil until both sides are golden brown.</li>
-        <li>Serve hot with yogurt or pickles.</li>
-    </ol>
-</p>
-</section>
-<hr>
+    </nav>
 
-<section>
+<div class="recipes-container">
+<section class="recipe-card" , id = 'paratha'>
+    <h2 id="paratha">Indian paratha</h2>
+    <!-- <p>
+        <a href="#paratha-ingredients">Ingredients</a> |
+        <a href="#paratha-steps">Steps</a>
+    </p> -->
+    <figure>
+        <!-- inlne css -->
+        <img src="paratha.png" alt="Indian paratha" style="border: 4px solid #8b4513;">
+        <figcaption>Indian Paratha</figcaption>
+    </figure>
+    <table>
+    <tr><th>Prep Time</th><td>15 mins</td></tr>
+    <tr><th>Cook Time</th><td>10 mins</td></tr>
+    <tr><th>Servings</th><td>2</td></tr>
+    <tr><th>Difficulty</th><td>Easy</td></tr>
+    </table>
+    <h3 >Ingredients</h3>
+        <ul>
+            <li><i>Whole wheat flour</i></li>
+            <li><i>Water</i></li>
+            <li><i>Salt</i></li>
+            <li><i>Ghee or oil</i></li>
+            <li><i>Stuffing (optional)</i></li>
+        </ul>
+        <h3>Steps</h3>
+        <ol>
+            <li>Mix whole wheat flour, water, and salt to form a dough. Knead until smooth.</li>
+            <li>Divide the dough into small balls and roll them out into circles.</li>
+            <li>If using stuffing, place it in the center of the circle and fold the edges to seal it.</li>
+            <li>Cook the paratha on a hot griddle, applying ghee or oil until both sides are golden brown.</li>
+            <li>Serve hot with yogurt or pickles.</li>
+        </ol>
+        <p style="background: #fff4cc; padding:10px;border-radius:8px;">
+            <strong>Chef Tip:</strong> Rest dough 15 minutes for softer parathas.
+        </p>
+</section>
+
+
+<section class="recipe-card" id="sushi">
 <h2 id="sushi">Japanese sushi</h2>
-<p>
+<!-- <p>
     <a href="#sushi-ingredients">Ingredients</a> |
     <a href="#sushi-steps">Steps</a>
-</p>
-<img src="shushi.png" alt="Japanese sushi" width="300">
-<table border="1">
+</p> -->
+<figure>
+    <img src="shushi.png" alt="Japanese sushi">
+    <figcaption>Classic Japanese sushi</figcaption>
+</figure>
+<table>
 <tr><th>Prep Time</th><td>20 mins</td></tr>
 <tr><th>Cook Time</th><td>10 mins</td></tr>
 <tr><th>Servings</th><td>2</td></tr>
 <tr><th>Difficulty</th><td>Hard</td></tr>
 </table>
-<h3 id="sushi-ingredients">Ingredients</h3>
+<h3>Ingredients</h3>
 <ul>
         <li><i>Sushi rice</i></li>
         <li><i>Nori sheets</i></li>
@@ -73,9 +147,7 @@
         <li><i>Wasabi</i></li>
         <li><i>Pickled ginger</i></li>
     </ul>
-</p>
-<p>
-    <h3 id="sushi-steps">Steps</h3>
+    <h3>Steps</h3>
 <ol>
     <li>Cook sushi rice and let it cool.</li>
     <li>Place a nori sheet on a bamboo mat, spread a thin layer of rice over it.</li>
@@ -84,23 +156,26 @@
     <li>Slice the roll into bite-sized pieces and serve with soy sauce, wasabi, and pickled ginger.</li>
 </ol>
 </section>
-</p>
-<hr>
 
-<section>
-    <h2 id="pasta">Italian pasta</h2>
-<p>
+
+<section class="recipe-card" id="pasta">
+    <h2>Italian pasta</h2>
+<!-- <p>
     <a href="#pasta-ingredients">Ingredients</a> |
     <a href="#pasta-steps">Steps</a>
-</p>
-<img src="italian pasta.png" alt="Italian pasta salad" width="300">
-<table border="1">
+</p> -->
+<figure>
+    <img src="italian pasta.png" alt="Italian pasta salad">
+    <figcaption>Italian pasta salad</figcaption>
+
+</figure>
+<table >
 <tr><th>Prep Time</th><td>15 mins</td></tr>
 <tr><th>Cook Time</th><td>10 mins</td></tr>
 <tr><th>Servings</th><td>2</td></tr>
 <tr><th>Difficulty</th><td>Easy</td></tr>
 </table>
-<h3 id="pasta-ingredients">Ingredients</h3>
+<h3>Ingredients</h3>
 <ul>
         <li><i>Pasta</i></li>
         <li><i>Tomato sauce</i></li>
@@ -109,34 +184,37 @@
         <li><i>Basil</i></li>
         <li><i>Salt</i></li>
         <li><i>herbs</i></li>
-    </ul>
-</p>
-<p>
-    <h3 id="pasta-steps">Steps</h3>
-    <ol>
+</ul>
+
+
+<h3>Steps</h3>
+<ol>
     <li>Cook pasta according to package instructions.</li>
     <li>Heat olive oil in a pan and sauté garlic until fragrant.</li>
     <li>Add tomato sauce and basil, simmer for 5 minutes.</li>
     <li>Combine cooked pasta with the sauce and herbs.</li>
 </ol>
-</p>
-</section>
-<hr>
 
-<section>
-    <h2 id="Biriyani">Chicken biriyani</h2>
-<p>
+</section>
+
+
+<section class="recipe-card" id="Biriyani">
+    <h2>Chicken biriyani</h2>
+<!-- <p>
     <a href="#Biriyani-ingredients">Ingredients</a> |
     <a href="#Biriyani-steps">Steps</a>
-</p>
-<img src="chicken briyani.png" alt="Chicken biriyani" width="300">
-<table border="1">
+</p> -->
+<figure>
+    <img src="chicken briyani.png" alt="Chicken biriyani">
+    <figcaption>Royal dum biriyani</figcaption>
+</figure>
+<table>
 <tr><th>Prep Time</th><td>30 mins</td></tr>
 <tr><th>Cook Time</th><td>40 mins</td></tr>
 <tr><th>Servings</th><td>4</td></tr>
 <tr><th>Difficulty</th><td>Medium</td></tr>
 </table>
-<h3 id="Biriyani-ingredients">Ingredients</h3>
+<h3>Ingredients</h3>
     <ul>
         <li><i>Chicken</i></li>
         <li><i>Rice</i></li>
@@ -145,70 +223,71 @@
         <li><i>Spices</i></li>
         <li><i>Cilantro</i></li>
     </ul>
-</p>
-<p>
-    <h3 id="Biriyani-steps">Steps</h3>
-    <ol>
+<h3>Steps</h3>
+<ol>
     <li>Marinate chicken with yogurt and spices for at least 1 hour.</li>
     <li>Cook rice until partially done and set aside.</li>
     <li>Sauté onions until golden brown, then add marinated chicken and cook until done.</li>
     <li>Layer the chicken and rice in a pot, cover, and cook on low heat for 20 minutes.</li>
     <li>Garnish with cilantro before serving.</li>
 </ol>
-</p>
+
 </section>
 
-<hr>
-<section>
-    <h2 id="sandwich">American sandwich</h2>
-<p>
+
+<section class="recipe-card" id="sandwich">
+    <h2>American sandwich</h2>
+<!-- <p>
     <a href="#sandwich-ingredients">Ingredients</a> |
     <a href="#sandwich-steps">Steps</a>
-</p>
-<img src="sandwich.png" alt="American sandwich" width="300">
-
-<table border="1">
+</p> -->
+<figure>
+    <img src="sandwich.png" alt="American sandwich">
+    <figcaption>American sandwich</figcaption>
+</figure>
+<table>
 <tr><th>Prep Time</th><td>10 mins</td></tr>
 <tr><th>Cook Time</th><td>5 mins</td></tr>
 <tr><th>Servings</th><td>2</td></tr>
 <tr><th>Difficulty</th><td>Easy</td></tr>
 </table>
-<h3 id="sandwich-ingredients">Ingredients</h3>
+<h3 >Ingredients</h3>
 <ul>
         <li><i>Bread</i></li>
         <li><i>Deli meat or vegetables</i></li>
         <li><i>Cheese</i></li>
         <li><i>Condiments</i></li>
         <li><i>Lettuce and tomato</i></li>
-    </ul>
-</p>
-<p>
-    <h3 id="sandwich-steps">Steps</h3>
+</ul>
+    <h3>Steps</h3>
     <ol>
     <li>Layer deli meat or vegetables, cheese, lettuce, and tomato between slices of bread.</li>
     <li>Add condiments of your choice (e.g., mayonnaise, mustard).</li>
     <li>Close the sandwich and cut it in half if desired.</li>
     <li>Serve with chips or a side salad.</li>
 </ol>
-</p>
+
 </section>
 
-<hr>
-<section>
-    <h2 id="salad">Healthy salad</h2>
-<p>
+
+<section class="recipe-card" id="salad">
+<h2 >Healthy salad</h2>
+<!-- <p>
     <a href="#salad-ingredients">Ingredients</a> |
     <a href="#salad-steps">Steps</a>
-</p>
-<img src="salad.png" alt="Healthy salad" width="300">
+</p> -->
+<figure>
+    <img src="salad.png" alt="Healthy salad">
+    <figcaption>Healthy salad</figcaption>
+</figure>
 
-<table border="1">
+<table>
 <tr><th>Prep Time</th><td>15 mins</td></tr>
 <tr><th>Cook Time</th><td>0 mins</td></tr>
 <tr><th>Servings</th><td>2</td></tr>
 <tr><th>Difficulty</th><td>Easy</td></tr>
 </table>
-<h3 id="salad-ingredients">Ingredients</h3>
+<h3>Ingredients</h3>
     <ul>
         <li><i>Mixed greens</i></li>
         <li><i>Cherry tomatoes</i></li>
@@ -217,24 +296,22 @@
         <li><i>Feta cheese</i></li>
         <li><i>Olive oil and vinegar dressing</i></li>
     </ul>
-</p>
-<p>
+<p style="background: #fff4cc; padding:10px;border-radius:8px;">
     <em><b>Special note:</b></em> Avoid adding sugar for health benefits.
 </p>
-<p>
-    <h3 id="salad-steps">Steps</h3>
+
+    <h3 >Steps</h3>
     <ol>
     <li>Combine mixed greens, cherry tomatoes, cucumbers, avocado, and feta cheese in a large bowl.</li>
     <li>Drizzle with olive oil and vinegar dressing.</li>
     <li>Toss the salad to evenly coat the ingredients with the dressing.</li>
     <li>Serve immediately for a fresh and healthy meal.</li>
 </ol>
-</p>
-<hr>
-<p><strong>End of recipes</strong></p>
 </section>
+</div>
 
-<h2>Recipe Feedback Form</h2>
+
+<h2 style="text-align: center;">Recipe Feedback Form</h2>
 <form action="#">
     <label for="name">Name:</label>
     <input type="text" id="name" name="name"><br><br>
@@ -267,4 +344,6 @@
 <a href="#top">Back to Top</a>
 </body>
 </html>
+
+
 
